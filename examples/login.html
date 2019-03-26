@@ -30,22 +30,39 @@
   <script src="../dist/components/form.js"></script>
   <script src="../dist/components/transition.js"></script>
   <style type="text/css">
+    /**
+    清除內外邊距
+    **/
 
-    /* Some basic formatting */
-    .container {
-      padding: 18em 0em;
+    body, h1, h2, h3, h4, h5, h6, hr, p,
+    blockquote,            /* structural elements 結構元素 */
+    dl, dt, dd, ul, ol, li,  /* list elements 清單元素 */
+    pre,                          /* text formatting elements 文本格式元素 */
+    form, fieldset, legend, button, input, textarea, /* form elements 表單元素 */
+    th, td,                       /* table elements 表格元素 */
+    img {                       /* img elements 圖片元素 */
+    border:medium none;
+    margin: 0;
+    padding: 0;
     }
-    /* Shows content box (not negative margins) */
-    .grid:before {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      background-color: #F0F0F0;
-      content: '';
-      width: calc(100% - 2rem);
-      height: calc(100% - 2rem);
-      box-shadow: 0px 0px 0px 1px #DDDDDD inset;
+
+    /** 設置預設字體 **/
+    body,button, input, select, textarea {
+    font: 12px/1.5 ‘OO正黑體’,tahoma, Srial, helvetica,
+    sans-serif;
     }
+
+    h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+    em{font-style:normal;}
+    /* 重置清單元素 */
+    ul, ol { list-style: none; }
+    /* 重置超連結元素 */
+    a { text-decoration: none; color:#333;}
+    a:hover { text-decoration: underline; color:#efc223; }
+    /* 重置圖片元素 */
+    img{ border:0px;}
+    /* 重置表格元素 */
+    table { border-collapse: collapse; border-spacing: 0; }
     .ui .segment{
       height: 100%;
       /* 水平置中 */
@@ -60,83 +77,186 @@
       vertical-align: middle;
       width: 88%;
     }
+
+    /* bakcground effect */
+    .context {
+        width: 100%;
+        position: absolute;
+        top:30vh;
+        
+    }
+    .area{
+        background: #4e54c8;  
+        background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+        width: 100%;
+        height:100vh;
+    }
+
+    .circles{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .circles li{
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 20px;
+        height: 20px;
+        background: rgba(240, 220, 55, 0.5);
+        animation: animate 25s linear infinite;
+        bottom: -150px;
+        
+    }
+
+    .circles li:nth-child(1){
+        left: 25%;
+        width: 80px;
+        height: 80px;
+        animation-delay: 0s;
+    }
+
+
+    .circles li:nth-child(2){
+        left: 10%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 2s;
+        animation-duration: 12s;
+    }
+
+    .circles li:nth-child(3){
+        left: 70%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 4s;
+    }
+
+    .circles li:nth-child(4){
+        left: 40%;
+        width: 60px;
+        height: 60px;
+        animation-delay: 0s;
+        animation-duration: 18s;
+    }
+
+    .circles li:nth-child(5){
+        left: 65%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 0s;
+    }
+
+    .circles li:nth-child(6){
+        left: 75%;
+        width: 110px;
+        height: 110px;
+        animation-delay: 3s;
+    }
+
+    .circles li:nth-child(7){
+        left: 35%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 7s;
+    }
+
+    .circles li:nth-child(8){
+        left: 50%;
+        width: 25px;
+        height: 25px;
+        animation-delay: 15s;
+        animation-duration: 45s;
+    }
+
+    .circles li:nth-child(9){
+        left: 20%;
+        width: 15px;
+        height: 15px;
+        animation-delay: 2s;
+        animation-duration: 35s;
+    }
+
+    .circles li:nth-child(10){
+        left: 85%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 0s;
+        animation-duration: 11s;
+    }
+    @keyframes animate {
+
+        0%{
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+            border-radius: 0;
+        }
+
+        100%{
+            transform: translateY(-1000px) rotate(720deg);
+            opacity: 0;
+            border-radius: 50%;
+        }
+
+    }
+    /* background effect end */
   </style>
-  <script>
-  $(document)
-    .ready(function() {
-      $('.ui.form')
-        .form({
-          fields: {
-            email: {
-              identifier  : 'email',
-              rules: [
-                {
-                  type   : 'empty',
-                  prompt : 'Please enter your e-mail'
-                },
-                {
-                  type   : 'email',
-                  prompt : 'Please enter a valid e-mail'
-                }
-              ]
-            },
-            password: {
-              identifier  : 'password',
-              rules: [
-                {
-                  type   : 'empty',
-                  prompt : 'Please enter your password'
-                },
-                {
-                  type   : 'length[6]',
-                  prompt : 'Your password must be at least 6 characters'
-                }
-              ]
-            }
-          }
-        })
-      ;
-    })
-  ;
-  </script>
 </head>
 <body>
-  <div class="ui text container">
-      <div class="ui grid">
-        <div class="right aligned eight wide column ">
-          <div class="ui segment" style="background-color: rgb(255, 255, 255);color: #FFFFFF;">
-            <span class="helper"></span>
-            <img id="imgLogoLogin" src="./assets/images/logoCircle.png">
+<div class="area" >
+  <ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div >
+<div class="context">
+    <div class="ui text container">
+        <div class="ui grid">
+          <div class="right aligned eight wide column ">
+              <span class="helper"></span>
+              <img id="imgLogoLogin" src="./assets/images/logoCircle_white.png">
+          </div>
+          <div class="left aligned eight wide column">
+            <h2 class="ui header" style="font-family: 微軟正黑體; color: #fff">研究倫理委員會申請暨審查系統</h2>
+            <form class="ui large form">
+                <div class="ui stacked segment">
+                  <div class="field">
+                    <div class="ui left icon input">
+                      <i class="user icon"></i>
+                      <input type="text" name="email" placeholder="帳號" style="font-family: 微軟正黑體;">
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="ui left icon input">
+                      <i class="lock icon"></i>
+                      <input type="password" name="password" placeholder="密碼" style="font-family: 微軟正黑體;">
+                    </div>
+                  </div>
+                  <a href="./homepage.html"><div class="ui fluid large submit button" style="background-color: #4e54c8;color: #FFFFFF;font-family: 微軟正黑體;">登入</div></a>
+                </div>
+          
+                <div class="ui error message"></div>
+          
+              </form>
+          
+              <div class="ui message" style="font-family: 微軟正黑體;">
+                忘記密碼 / <a href="#">註冊</a>
+              </div>
           </div>
         </div>
-        <div class="left aligned eight wide column">
-          <h2 class="ui header" style="font-family: 微軟正黑體;">研究倫理委員會申請暨審查系統</h2>
-          <form class="ui large form">
-              <div class="ui stacked segment">
-                <div class="field">
-                  <div class="ui left icon input">
-                    <i class="user icon"></i>
-                    <input type="text" name="email" placeholder="帳號" style="font-family: 微軟正黑體;">
-                  </div>
-                </div>
-                <div class="field">
-                  <div class="ui left icon input">
-                    <i class="lock icon"></i>
-                    <input type="password" name="password" placeholder="密碼" style="font-family: 微軟正黑體;">
-                  </div>
-                </div>
-                <a href="./homepage.html"><div class="ui fluid large submit button" style="background-color: #EA5669;color: #FFFFFF;font-family: 微軟正黑體;">登入</div></a>
-              </div>
-        
-              <div class="ui error message"></div>
-        
-            </form>
-        
-            <div class="ui message" style="font-family: 微軟正黑體;">
-              忘記密碼 / <a href="#">註冊</a>
-            </div>
-        </div>
-      </div>
-  </div>
+    </div>
+</div>
 </body>
 </html>
