@@ -29,16 +29,36 @@
   <script src="assets/library/jquery.min.js"></script>
   <script src="../dist/components/form.js"></script>
   <script src="../dist/components/transition.js"></script>
-
   <style type="text/css">
-    body {
-      background-color: #DADADA;
+
+    /* Some basic formatting */
+    .container {
+      padding: 18em 0em;
     }
-    body > .grid {
+    /* Shows content box (not negative margins) */
+    .grid:before {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background-color: #F0F0F0;
+      content: '';
+      width: calc(100% - 2rem);
+      height: calc(100% - 2rem);
+      box-shadow: 0px 0px 0px 1px #DDDDDD inset;
+    }
+    .ui .segment{
       height: 100%;
+      /* 水平置中 */
+      text-align: center; margin: 1em 0;
     }
-    .image {
-      margin-top: -100px;
+    .helper {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+    #imgLogoLogin{
+      vertical-align: middle;
+      width: 88%;
     }
   </style>
   <script>
@@ -81,45 +101,42 @@
   </script>
 </head>
 <body>
-    
-    <div class="ui raised very padded text container middle aligned center aligned segment">
-        <h2 class="ui header" style="font-family: 微軟正黑體;">研究倫理委員會申請暨審查系統</h2>
-        <div class="ui equal width center aligned padded grid">
-            <div class="row">
-              <div class="column" style="background-color: #D74667;color: #FFFFFF;">
-              </div>
-              <div class="column">
-                    <form class="ui large form">
-                      <div class="ui stacked segment">
-                        <div class="field">
-                          <div class="ui left icon input">
-                            <i class="user icon"></i>
-                            <input type="text" name="email" placeholder="帳號" style="font-family: 微軟正黑體;">
-                          </div>
-                        </div>
-                        <div class="field">
-                          <div class="ui left icon input">
-                            <i class="lock icon"></i>
-                            <input type="password" name="password" placeholder="密碼" style="font-family: 微軟正黑體;">
-                          </div>
-                        </div>
-                        <a href="./homepage.html"><div class="ui fluid large submit button" style="background-color: #EA5669;color: #FFFFFF;font-family: 微軟正黑體;">登入</div></a>
-                      </div>
-                
-                      <div class="ui error message"></div>
-                
-                    </form>
-                
-                    <div class="ui message" style="font-family: 微軟正黑體;">
-                      忘記密碼 / <a href="#">註冊</a>
-                    </div>
-              </div>
+  <div class="ui text container">
+      <div class="ui grid">
+        <div class="right aligned eight wide column ">
+          <div class="ui segment" style="background-color: rgb(255, 255, 255);color: #FFFFFF;">
+            <span class="helper"></span>
+            <img id="imgLogoLogin" src="./assets/images/logoCircle.png">
           </div>
         </div>
-    </div>
+        <div class="left aligned eight wide column">
+          <h2 class="ui header" style="font-family: 微軟正黑體;">研究倫理委員會申請暨審查系統</h2>
+          <form class="ui large form">
+              <div class="ui stacked segment">
+                <div class="field">
+                  <div class="ui left icon input">
+                    <i class="user icon"></i>
+                    <input type="text" name="email" placeholder="帳號" style="font-family: 微軟正黑體;">
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui left icon input">
+                    <i class="lock icon"></i>
+                    <input type="password" name="password" placeholder="密碼" style="font-family: 微軟正黑體;">
+                  </div>
+                </div>
+                <a href="./homepage.html"><div class="ui fluid large submit button" style="background-color: #EA5669;color: #FFFFFF;font-family: 微軟正黑體;">登入</div></a>
+              </div>
+        
+              <div class="ui error message"></div>
+        
+            </form>
+        
+            <div class="ui message" style="font-family: 微軟正黑體;">
+              忘記密碼 / <a href="#">註冊</a>
+            </div>
+        </div>
+      </div>
   </div>
-</div>
-
 </body>
-
 </html>
