@@ -170,7 +170,7 @@
               <a class="item"><i class="id card outline icon"></i>簡歷</a>
               <a class="item"><i class="clock outline icon"></i>時數</a>
               <div class="divider"></div>
-              <a class="item"><i class="sign out alternate icon"></i>登出</a>
+              <a class="item" href=".\login.html"><i class="sign out alternate icon"></i>登出</a>
             </div>
           </div>
         </div>
@@ -308,155 +308,119 @@
         </div>
       </div>
 
-      <div
-
-        class="sixteen wide mobile thirteen wide tablet thirteen wide computer right floated column"
-
-        id="content"
-
-      >
-
+      <div class="sixteen wide mobile thirteen wide tablet thirteen wide computer right floated column" id="content">
         <div class="ui padded grid">
-
           <div class="row">
+              <!-- <marquee direction="right" height="30" scrollamount="5" behavior="alternate">跑馬燈測試</marquee> -->
+              <div class="ui top attached tabular menu">
+                  <a class="item" data-tab="first">案件流程進度圖 Demo</a>
+                  <a class="item active" data-tab="second">申請表單 Demo</a>
+                  <a class="item" data-tab="third">表格 Demo</a>
+                </div>
+                <div class="ui bottom attached tab segment" data-tab="first">
+                    <div class="row">
+                        <!-- <h1 class="ui huge dividing header">案件流程進度圖 Demo</h1> -->
+                      </div>
+                      <div class="center aligned row">
+                          <iframe src="./timeline/h/index.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+                      </div>
+                      <div class="ui hidden section divider"></div>
+                      <div class="center aligned row">
+                          <iframe src="./timeline/v/index.html" width="100%" height="1500px" frameborder="0" scrolling="no"></iframe>
+                      </div>
+                </div>
+                <div class="ui bottom attached tab segment active" data-tab="second">
+                    <button id="btnAddNewCase" class="ui inverted green button">
+                      <i class="plus icon"></i>
+                      新增案件
+                    </button>
 
-            <h1 class="ui huge dividing header">案件流程進度圖</h1>
+                    <table class="ui green table">
+                      <thead>
+                        <tr><th>角色名稱</th>
+                        <th>IRB/REC案號</th>
+                        <th>計畫主持人</th>
+                        <th>計畫中文名稱</th>
+                        <th>計畫類別</th>
+                        <th>案件狀態</th>
+                        <th>下次追蹤日期</th>
+                      </tr></thead><tbody>
+                        <tr>
+                          <td>計畫主持人</td>
+                          <td></td>
+                          <td>智少新</td>
+                          <td>我與惡的距離</td>
+                          <td></td>
+                          <td>新案審查</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                            <td>協同主持人</td>
+                            <td></td>
+                            <td>羅火漢</td>
+                            <td>白日夢冒險家</td>
+                            <td></td>
+                            <td>新案審查</td>
+                            <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
 
+                    <div class="ui tiny modal">
+                        <i class="close icon"></i>
+                        <div class="header">
+                          新案申請
+                        </div>
+                        <div class="content">
+                          <!-- form  -->
+                          <div class="ui form">
+                              <div class="field">
+                                  <label>計畫角色</label>
+                                  <div class="ui selection dropdown">
+                                      <input name="role" type="hidden">
+                                      <i class="dropdown icon"></i>
+                                      <div class="default text">請選擇...</div>
+                                      <div class="menu">
+                                          <div class="item" data-value="0">計畫主持人</div>
+                                          <div class="item" data-value="1">協同主持人</div>
+                                          <div class="item" data-value="2">授權使用者</div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="field">
+                                <label>計畫標號</label>
+                                <input type="text">
+                              </div>
+                              <div class="required field">
+                                <label>計畫名稱</label>
+                                <input type="text" placeholder="UI Level UP 計畫">
+                              </div>
+                              <div class="required field">
+                                <label>計畫主持人</label>
+                                <input type="text" placeholder="智多星">
+                              </div>
+                                
+                            </div>
+                          <!-- form  end-->
+                        </div>
+                        <div class="actions">
+                          <div class="ui black deny button">
+                            取消
+                          </div>
+                          <div class="ui positive right labeled icon button">
+                            儲存
+                            <i class="checkmark icon"></i>
+                          </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="ui bottom attached tab segment" data-tab="third">
+                  Third
+                </div>
           </div>
-
-          <div class="center aligned row">
-
-              <iframe src="./timeline/h/index.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
-          </div>
-
-          <div class="ui hidden section divider"></div>
-
-          <div class="row">
-
-            <h1 class="ui huge dividing header">Section title</h1>
-
-          </div>
-
-          <div class="row">
-
-            <table class="ui single line striped selectable unstackable table">
-
-              <thead>
-
-                <tr>
-
-                  <th>#</th>
-
-                  <th>Header</th>
-
-                  <th>Header</th>
-
-                  <th>Header</th>
-
-                  <th>Header</th>
-
-                </tr>
-
-              </thead>
-
-              <tbody>
-
-                <tr>
-
-                  <td>1,001</td>
-
-                  <td>Lorem</td>
-
-                  <td>ipsum</td>
-
-                  <td>dolor</td>
-
-                  <td>sit</td>
-
-                </tr>
-
-                <tr>
-
-                  <td>1,002</td>
-
-                  <td>amet</td>
-
-                  <td>consectetur</td>
-
-                  <td>adipiscing</td>
-
-                  <td>elit</td>
-
-                </tr>
-
-                <tr>
-
-                  <td>1,003</td>
-
-                  <td>Integer</td>
-
-                  <td>nec</td>
-
-                  <td>odio</td>
-
-                  <td>Praesent</td>
-
-                </tr>
-
-                <tr>
-
-                  <td>1,003</td>
-
-                  <td>libero</td>
-
-                  <td>Sed</td>
-
-                  <td>cursus</td>
-
-                  <td>ante</td>
-
-                </tr>
-
-                <tr>
-
-                  <td>1,004</td>
-
-                  <td>dapibus</td>
-
-                  <td>diam</td>
-
-                  <td>Sed</td>
-
-                  <td>nisi</td>
-
-                </tr>
-
-                <tr>
-
-                  <td>1,005</td>
-
-                  <td>Nulla</td>
-
-                  <td>quis</td>
-
-                  <td>sem</td>
-
-                  <td>at</td>
-
-                </tr>
-
-                
-              </tbody>
-
-            </table>
-
-          </div>
-          <div class="center aligned row">
-
-              <iframe src="./timeline/v/index.html" width="100%" height="1500px" frameborder="0" scrolling="no"></iframe>
-          </div>
+          
         </div>
-
       </div>
 
     </div>
@@ -480,7 +444,16 @@
         $('.ui.dropdown')
           .dropdown()
         ;
+        $('.menu .item')
+          .tab()
+        ;
 
+        $('#btnAddNewCase').on('click', function(){
+          $('.ui.modal')
+            .modal('show')
+          ;
+        });
+        
       });
 
     </script>
