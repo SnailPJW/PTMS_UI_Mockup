@@ -17,6 +17,7 @@
   <link rel="stylesheet" type="text/css" href="../dist/components/image.css">
   <link rel="stylesheet" type="text/css" href="../dist/components/menu.css">
 
+  <link rel="stylesheet" type="text/css" href="../dist/components/input.css">
   <link rel="stylesheet" type="text/css" href="../dist/components/divider.css">
   <link rel="stylesheet" type="text/css" href="../dist/components/dropdown.css">
   <link rel="stylesheet" type="text/css" href="../dist/components/segment.css">
@@ -113,7 +114,58 @@
       }
     }
 
+    /* segment background effect */
+    .colorfulBg {
+      width: 100wh;
+      color: #fff;
+      background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+      background-size: 400% 400%;
+      -webkit-animation: Gradient 15s ease infinite;
+      -moz-animation: Gradient 15s ease infinite;
+      animation: Gradient 15s ease infinite;
+    }
 
+    @-webkit-keyframes Gradient {
+      0% {
+        background-position: 0% 50%
+      }
+      50% {
+        background-position: 100% 50%
+      }
+      100% {
+        background-position: 0% 50%
+      }
+    }
+
+    @-moz-keyframes Gradient {
+      0% {
+        background-position: 0% 50%
+      }
+      50% {
+        background-position: 100% 50%
+      }
+      100% {
+        background-position: 0% 50%
+      }
+    }
+
+    @keyframes Gradient {
+      0% {
+        background-position: 0% 50%
+      }
+      50% {
+        background-position: 100% 50%
+      }
+      100% {
+        background-position: 0% 50%
+      }
+    }
+    /* segment background effect end*/
+    /* Menu effect adjust */
+    .ui.secondary.inverted.pointing.menu{
+      border-width: 0px;
+    }
+    /* Menu effect adjust end*/
   </style>
 
   <script src="assets/library/jquery.min.js"></script>
@@ -123,19 +175,6 @@
   <script>
   $(document)
     .ready(function() {
-
-      // fix menu when passed
-      $('.masthead')
-        .visibility({
-          once: false,
-          onBottomPassed: function() {
-            $('.fixed.menu').transition('fade in');
-          },
-          onBottomPassedReverse: function() {
-            $('.fixed.menu').transition('fade out');
-          }
-        })
-      ;
 
       // create sidebar and attach to menu open
       $('.ui.sidebar')
@@ -148,21 +187,8 @@
 </head>
 <body>
 
-<!-- Following Menu -->
-<div class="ui large top fixed hidden menu">
-  <div class="ui container">
-    <a class="active item">首頁</a>
-    <a class="item">問題通報</a>
-    <div class="right menu">
-      <div class="item">
-        <a class="ui button" href="./login.html">登出</a>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- Sidebar Menu -->
-<div class="ui vertical inverted sidebar menu">
+<div class="ui vertical sidebar menu">
   <a class="active item">首頁</a>
   <a class="item">問題通報</a>
   <a class="item" href="./login.html">登出</a>
@@ -171,35 +197,48 @@
 
 <!-- Page Contents -->
 <div class="pusher">
-  <div class="ui inverted vertical masthead center aligned segment">
+  <div class="colorfulBg">
+      <div class="ui vertical masthead center aligned segment">
 
-    <div class="ui container">
-      <div class="ui large secondary inverted pointing menu">
-        <a class="toc item">
-          <i class="sidebar icon"></i>
-        </a>
-        <a class="active item">首頁</a>
-        <a class="item">問題通報</a>
-        <div class="right item">
-          <a class="ui inverted button" href="./login.html">登出</a>
+        <div class="ui container">
+          <div class="ui large secondary inverted pointing menu">
+            <a class="toc item">
+              <i class="sidebar icon"></i>
+            </a>
+            <a class="active item">首頁</a>
+            <a class="item">問題通報</a>
+            <div class="right menu">
+                <div class="ui item">
+                  <div class="ui icon input">
+                    <input type="text" placeholder="Search...">
+                    <i class="search icon"></i>
+                  </div>
+                </div>
+                <div class="ui item">
+                  <a class="ui inverted button" href="./login.html">登出</a>
+                </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="ui text container">
+          <h1 class="ui inverted header">
+            研究倫理委員會申請暨審查系統 
+          </h1>
+          <h2>您的下一步是 ...</h2>
+          <div class="ui huge buttons">
+              <a href="./dashboard_apply.html">
+                <div class="ui inverted button"><i class="left arrow icon"></i> 申請 </div>
+              </a>
+              <div class="or"></div>
+              <a href="./dashboard_review.html">
+                <div class="ui inverted button">審查 <i class="right arrow icon"></i></div>
+              </a>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="ui text container">
-      <h1 class="ui inverted header">
-        研究倫理委員會申請暨審查系統 
-      </h1>
-      <h2>您的下一步是 ...</h2>
-      <a href="./dashboard_apply.html">
-        <div class="ui huge primary button"><i class="left arrow icon"></i> 申請 </div>
-      </a>
-      <a href="./dashboard_review.html">
-        <div class="ui huge primary button">審查 <i class="right arrow icon"></i></div>
-      </a>
-    </div>
-
   </div>
+  
 
   <div class="ui vertical stripe segment">
     <div class="ui middle aligned stackable grid container">
