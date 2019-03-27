@@ -60,7 +60,7 @@
 
         height: 100vh;
 
-        background-color: #f5f5f5;
+        background-color: #fff;
 
         padding-top: 68px;
 
@@ -184,23 +184,27 @@
 
       <div class="ui blue inverted borderless top fixed fluid menu">
 
-        <a class="header item">研究倫理委員會申請暨審查系統 </a>
+        <a class="header item">研究倫理委員會申請暨審查系統</a>
 
         <div class="right menu">
-
           <div class="item">
-
-            <div class="ui small input"><input placeholder="Search..." /></div>
-
+            <div class="ui icon small input">
+              <input placeholder="查詢..." />
+              <i class="inverted circular search link icon"></i>
+            </div>
           </div>
-
-          <a class="item">使用者</a>
           <a class="item">問題通報</a>
-
+          <div class="ui dropdown item">
+            使用者 <i class="dropdown icon"></i>
+            <div class="menu">
+              <a class="item"><i class="id card outline icon"></i>簡歷</a>
+              <a class="item"><i class="clock outline icon"></i>時數</a>
+              <div class="divider"></div>
+              <a class="item"><i class="sign out alternate icon"></i>登出</a>
+            </div>
+          </div>
         </div>
-
       </div>
-
     </div>
 
     <div class="ui mobile only padded grid">
@@ -225,6 +229,7 @@
 
         <div class="ui vertical borderless inverted fluid menu">
 
+          
             <a class="item">使用者</a>
             <a class="item">問題通報</a>
 
@@ -251,29 +256,83 @@
         id="sidebar"
 
       >
-
-        <div class="ui vertical borderless fluid text menu">
-
-          <a class="active item">Overview</a> <a class="item">Reports</a>
-
-          <a class="item">Analytics</a> <a class="item">Export</a>
-
-          <div class="ui hidden divider"></div>
-
-          <a class="item">Nav item</a> <a class="item">Nav item again</a>
-
-          <a class="item">One more nav</a> <a class="item">Another nav item</a>
-
-          <a class="item">More navigation</a>
-
-          <div class="ui hidden divider"></div>
-
-          <a class="item">Macintosh</a> <a class="item">Linux</a>
-
-          <a class="item">Windows</a>
-
+        <div class="ui vertical accordion fluid menu">
+            <div class="item">
+                <a class="title">
+                  <i class="dropdown icon"></i>
+                  一般作業
+                </a>
+                <div class="content">
+                  <div class="ui vertical borderless menu">
+                      <a class="item">
+                        代辦事項
+                        <div class="ui red label">1</div>
+                      </a>
+                    </div>
+                </div>
+              </div>
+            <div class="item">
+              <a class="title">
+                <i class="dropdown icon"></i>
+                申請作業
+              </a>
+              <div class="content">
+                <div class="ui vertical borderless menu">
+                  <a class="item">
+                    新案
+                  </a>
+                  <a class="item">
+                    變更案
+                  </a>
+                  <a class="item">
+                    持續審查
+                  </a>
+                  <a class="item">
+                    SAE
+                  </a>
+                  <a class="item">
+                    試驗偏差
+                  </a>
+                  <a class="item">
+                    結案、終止、撤案
+                  </a>
+                  <a class="item">
+                    其他
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="red item">
+              <a class="active title">
+                <i class="dropdown icon"></i>
+                審查作業
+              </a>
+              <div class="active content">
+                  <div class="ui vertical borderless menu">
+                      <a class="item">
+                        預審
+                      </a>
+                      <a class="item">
+                        會議時程
+                      </a>
+                      <a class="item">
+                        會議記錄
+                      </a>
+                    </div>
+              </div>
+            </div>
         </div>
-
+        <div class="ui vertical fluid menu">
+          <div class="ui item"><h3>角色</h3></div>
+          <a class="ui active item">承辦人員</a>
+          <a class="ui item">委員會</a>
+          <a class="ui item">計畫主持人</a>
+          <a class="ui item">授權的使用者<br>(含共/協同主持人)</a>
+          <a class="ui item">主任委員</a>
+          <a class="ui item">一般審查委員/專家</a>
+          <a class="ui item">計畫主持人</a>
+          <a class="ui item">簡易審查委員</a>
+        </div>
       </div>
 
       <div
@@ -414,146 +473,7 @@
 
                 </tr>
 
-                <tr>
-
-                  <td>1,006</td>
-
-                  <td>nibh</td>
-
-                  <td>elementum</td>
-
-                  <td>imperdiet</td>
-
-                  <td>Duis</td>
-
-                </tr>
-
-                <tr>
-
-                  <td>1,007</td>
-
-                  <td>sagittis</td>
-
-                  <td>ipsum</td>
-
-                  <td>Praesent</td>
-
-                  <td>mauris</td>
-
-                </tr>
-
-                <tr>
-
-                  <td>1,008</td>
-
-                  <td>Fusce</td>
-
-                  <td>nec</td>
-
-                  <td>tellus</td>
-
-                  <td>sed</td>
-
-                </tr>
-
-                <tr>
-
-                  <td>1,009</td>
-
-                  <td>augue</td>
-
-                  <td>semper</td>
-
-                  <td>porta</td>
-
-                  <td>Mauris</td>
-
-                </tr>
-
-                <tr>
-
-                  <td>1,010</td>
-
-                  <td>massa</td>
-
-                  <td>Vestibulum</td>
-
-                  <td>lacinia</td>
-
-                  <td>arcu</td>
-
-                </tr>
-
-                <tr>
-
-                  <td>1,011</td>
-
-                  <td>eget</td>
-
-                  <td>nulla</td>
-
-                  <td>Class</td>
-
-                  <td>aptent</td>
-
-                </tr>
-
-                <tr>
-
-                  <td>1,012</td>
-
-                  <td>taciti</td>
-
-                  <td>sociosqu</td>
-
-                  <td>ad</td>
-
-                  <td>litora</td>
-
-                </tr>
-
-                <tr>
-
-                  <td>1,013</td>
-
-                  <td>torquent</td>
-
-                  <td>per</td>
-
-                  <td>conubia</td>
-
-                  <td>nostra</td>
-
-                </tr>
-
-                <tr>
-
-                  <td>1,014</td>
-
-                  <td>per</td>
-
-                  <td>inceptos</td>
-
-                  <td>himenaeos</td>
-
-                  <td>Curabitur</td>
-
-                </tr>
-
-                <tr>
-
-                  <td>1,015</td>
-
-                  <td>sodales</td>
-
-                  <td>ligula</td>
-
-                  <td>in</td>
-
-                  <td>libero</td>
-
-                </tr>
-
+                
               </tbody>
 
             </table>
@@ -579,6 +499,12 @@
           $(".mobile.only.grid .ui.vertical.menu").toggle(100);
 
         });
+        $('.ui.accordion')
+          .accordion()
+        ;
+        $('.ui.dropdown')
+          .dropdown()
+        ;
 
       });
 
