@@ -335,7 +335,7 @@
                       新增案件
                     </button>
 
-                    <table class="ui green table">
+                    <table id="tableNewCase" class="ui green table">
                       <thead>
                         <tr><th>角色名稱</th>
                         <th>IRB/REC案號</th>
@@ -377,27 +377,27 @@
                               <div class="field">
                                   <label>計畫角色</label>
                                   <div class="ui selection dropdown">
-                                      <input name="role" type="hidden">
+                                      <input id="fieldNewCaseRole" name="role" type="hidden">
                                       <i class="dropdown icon"></i>
                                       <div class="default text">請選擇...</div>
                                       <div class="menu">
-                                          <div class="item" data-value="0">計畫主持人</div>
-                                          <div class="item" data-value="1">協同主持人</div>
-                                          <div class="item" data-value="2">授權使用者</div>
+                                          <div class="item" data-value="計畫主持人">計畫主持人</div>
+                                          <div class="item" data-value="協同主持人">協同主持人</div>
+                                          <div class="item" data-value="授權使用者">授權使用者</div>
                                       </div>
                                   </div>
                               </div>
                               <div class="field">
-                                <label>計畫標號</label>
-                                <input type="text">
+                                <label>計畫編號</label>
+                                <input id="fieldNewCaseID" type="text">
                               </div>
                               <div class="required field">
                                 <label>計畫名稱</label>
-                                <input type="text" placeholder="UI Level UP 計畫">
+                                <input id="fieldNewCaseName" type="text" placeholder="UI Level UP 計畫">
                               </div>
                               <div class="required field">
                                 <label>計畫主持人</label>
-                                <input type="text" placeholder="智多星">
+                                <input id="fieldNewCaseHostName" type="text" placeholder="智多星">
                               </div>
                                 
                             </div>
@@ -450,6 +450,30 @@
 
         $('#btnAddNewCase').on('click', function(){
           $('.ui.modal')
+            .modal({
+              closable  : false,
+              onDeny    : function(){
+                // window.alert('Wait not yet!');
+                return false;
+              },
+              onApprove : function() {
+                // window.alert('Approved!');
+                // $('#fieldNewCaseRole').val();
+                // $('#fieldNewCaseID').val();
+                // $('#fieldNewCaseName').val();
+                // $('#fieldNewCaseHostName').val();
+                // <td>計畫主持人</td>
+                // <td></td>
+                // <td>智少新</td>
+                // <td>我與惡的距離</td>
+                // <td></td>
+                // <td>新案審查</td>
+                // <td></td>
+                $('#tableNewCase > tbody:last-child').append('<tr><td>'+$('#fieldNewCaseRole').val()+'</td><td></td><td>'+
+                    $('#fieldNewCaseHostName').val()+'</td><td>'+$('#fieldNewCaseName').val()+'</td><td></td><td>新案審查</td><td></td></tr>');
+              }
+            })
+
             .modal('show')
           ;
         });
